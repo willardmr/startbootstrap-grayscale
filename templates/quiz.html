@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<img src="{% static object.random_photo.file_location %}">
+
+<form action="" method="post">{% csrf_token %}
+    {{ form | crispy }}
+    <input type="submit" value="Next" />
+</form>
+{% endblock %}

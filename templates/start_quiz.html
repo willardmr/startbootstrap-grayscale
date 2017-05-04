@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<h2>Thats all of the faces<h2>
+<h2>Feel free to go back and look at the faces now or click </h2>
+<h2><a href={% url 'scramble_quiz' pk=object.pk %}>begin quiz</a></h2>
+
+{% endblock %}

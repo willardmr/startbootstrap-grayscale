@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<img src="{% static object.random_photo.file_location %}">
+<hr>
+<h2>{{ object.name }}</h2>
+<a href="{% url 'learn_names' object.quiz.pk object.number|add:"-1" %}">Previous</a> |
+<a href="{% url 'learn_names' object.quiz.pk object.number|add:"1" %}">Next</a>
+
+{% endblock %}
