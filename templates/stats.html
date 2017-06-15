@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated and total_faces %}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+</script>
+<div style="margin-top:100px;">
+{{ total_faces.as_html }}
+</div>
+<br>
+<div>
+{{ correctness.as_html }}
+</div>
+<br>
+<div>
+{{ time.as_html }}
+</div>
+{% elif request.user.is_authenticated %}
+<h2>You have not completed any quizzes</h2>
+{% else %}
+<h2>Please login to view stats</h2>
+{% endif %}
+{% endblock %}

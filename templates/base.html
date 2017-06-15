@@ -13,7 +13,7 @@
     <title>Learn Names</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
@@ -56,9 +56,22 @@
                     <li>
                     <a href="{% url 'create_quiz'%}">New Quiz</a>
                     </li>
+                    {% if request.user.is_authenticated %}
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                    <a href="{% url 'logout'%}">Logout</a>
                     </li>
+                    <li>
+                    <a href="{% url 'stats' %}">Stats</a>
+                    </li>
+                    {% else %}
+                    <li>
+                    <a href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'register' %}">Register</a>
+                    </li>
+
+                    {% endif %}
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
