@@ -315,3 +315,12 @@ body {
 input {
     color: black;
 }
+label {
+    color:black;
+}
+input::selection {
+  background: lightgray; /* WebKit/Blink Browsers */
+}
+input::-moz-selection {
+  background: lightgray; /* Gecko Browsers */
+}

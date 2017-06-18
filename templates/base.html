@@ -56,12 +56,22 @@
                     <li>
                     <a href="{% url 'create_quiz'%}">New Quiz</a>
                     </li>
-                    {% if request.user.is_authenticated %}
-                    <li>
-                    <a href="{% url 'logout'%}">Logout</a>
-                    </li>
+                    
                     <li>
                     <a href="{% url 'stats' %}">Stats</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                    <a>|</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                    <a>&lt&ltHI {{ request.user.username }}&gt&gt</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'logout'%}">Logout</a>
                     </li>
                     {% else %}
                     <li>
@@ -70,11 +80,7 @@
                     <li>
                     <a href="{% url 'register' %}">Register</a>
                     </li>
-
                     {% endif %}
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
