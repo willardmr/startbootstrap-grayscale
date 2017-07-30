@@ -5,7 +5,7 @@
 {% block content %}
 <img src="{% static object.random_photo.file_location %}">
 
-<form action="" method="post">{% csrf_token %}
+<form action="" method="post" autocomplete="off">{% csrf_token %}
     {{ form | crispy }}
     <input type="submit" value="Next" />
 </form>
